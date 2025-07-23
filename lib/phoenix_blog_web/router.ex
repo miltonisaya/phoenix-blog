@@ -1,6 +1,5 @@
 defmodule PhoenixBlogWeb.Router do
   use PhoenixBlogWeb, :router
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -18,6 +17,11 @@ defmodule PhoenixBlogWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+  end
+
+  scope "/api/v1", PhoenixBlogWeb do
+    pipe_through :api
+    resources "/posts", PostController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
