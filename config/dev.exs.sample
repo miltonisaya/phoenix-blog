@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :phoenix_blog, PhoenixBlog.Repo,
-  username: "milton",
-  password: "652340",
+  username: "username",
+  password: "password",
   hostname: "localhost",
   database: "phoenix_blog_dev",
   stacktrace: true,
